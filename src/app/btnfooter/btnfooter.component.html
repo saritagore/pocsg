@@ -2,7 +2,12 @@
 <div class="flex justify-end">
     @for (item of btnsResponse; track item.id) {
       <button [class]="item.attribute ? item.attribute.class_name: ''"
-      class="px-2 py-2 border border-black mr-1"
-      [disabled]="item.isEnable">{{item.displayName}}</button>
+      class="px-1 py-1 border border-black mr-1 text-sm"
+      [disabled]="item.isEnable">
+      @if (item.icon) {
+        <span [class]="item.icon" class="pr-1"></span>
+      }
+      <span>{{item.displayName}}</span>
+    </button>
     }
 </div>

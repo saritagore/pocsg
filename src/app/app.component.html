@@ -11,8 +11,42 @@
 
   <!-- Main Content -->
   <main class="flex-1 p-4 bg-gray-100">
-    <p>This is the main content area.</p>
-    <router-outlet />
+    <div class="flex gap-4 h-full">
+
+      <!-- Left Sidebar -->
+      <aside class="w-1/4 bg-white shadow p-4 rounded">
+        <div *ngFor="let section of menu">
+          <button 
+            class="flex items-center w-full text-left py-2 font-semibold"
+            (click)="toggleSection(section)">
+            <span class="mr-2">
+              {{ section.expanded ? '−' : '+' }}
+            </span>
+            {{ section.title }}
+          </button>
+        
+          <div *ngIf="section.expanded" class="pl-6">
+            <div 
+              *ngFor="let item of section.items" 
+              class="py-1 text-gray-700 flex items-center">
+              <span class="w-2 h-2 mr-2 rounded-full border border-gray-400 flex items-center justify-center text-xs">
+                •
+              </span>
+              {{ item }}
+            </div>
+          </div>
+        </div>
+        
+      </aside>
+
+      <!-- Right Main Section -->
+      <section class="flex-1 bg-white shadow p-4 rounded">
+        <h2 class="font-semibold mb-2">Main Content</h2>
+        <p>This is your main area</p>
+        <router-outlet></router-outlet>
+      </section>
+
+    </div>
   </main>
 
   <!-- Footer -->

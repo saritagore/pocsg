@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import {ACTIONBTNAPI} from '../data/actionsbtns';
+import { FIELDS } from '../data/fields';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,5 +13,9 @@ http = inject(HttpClient);
 getButtons() {
   return of(ACTIONBTNAPI)
   // return this.http.get(this.actionbtnurl);
+}
+
+getPatientVisitData() {
+  return of(FIELDS)
 }
 }

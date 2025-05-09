@@ -14,7 +14,7 @@ export class AppComponent {
   menu = [
     {
       title: 'Patient Visit Details',
-      expanded: false,
+      expanded: true,
       items: [
         "Patient Visit Details","Patient Visit Questionnaire","Patient Visit QC Questionnaire",
         "PV-Documents", 'PV-Observation & Investigation Findings'
@@ -22,7 +22,7 @@ export class AppComponent {
     },
     {
       title: 'Hospital Visit',
-      expanded: true,
+      expanded: false,
       items: [
         'Hospital Visit',
         'Owner Details',

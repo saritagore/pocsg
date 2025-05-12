@@ -25,7 +25,8 @@ export const FIELDS = {
                             "fieldCode": "ISPAV", //call api - {code: ISPAV}
                             "orderNo": 10,
                             "isMandatory": true,
-                            "isVisble": null
+                            "isVisble": null,
+                            "OPTS":[]  // CAN BE ADD
                         },
                         {
                             "field": "patientDischarged",
